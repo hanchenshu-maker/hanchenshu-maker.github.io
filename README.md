@@ -20,11 +20,12 @@ I'm an undergraduate at UCLA studying Economics and Mathematics of Computation, 
 The design is minimal: a single narrow column on white, Inter throughout, dashed timelines for each section, and a photo slot (add `photo.jpg` to the repo root to replace the initials). The site is deliberately simple: one hand-written HTML file with inline CSS and no frameworks, build step or tracking scripts. It loads fast, works without JavaScript-heavy tooling, and is easy to keep up to date.
 
 ```
-index.html    the whole site (main page + résumé view)
-resume.pdf    one-page PDF of the résumé
-404.html      page shown for broken links
-robots.txt    search-engine crawl rules
-sitemap.xml   page list for search engines
+index.html                               the whole site (main page + résumé view)
+Hanchen_Resume__UCLA_Mobility_Lab_.pdf   research résumé (PDF)
+Hanchen_Shu_Resume 1.pdf                 product résumé (PDF)
+404.html                                 page shown for broken links
+robots.txt                               search-engine crawl rules
+sitemap.xml                              page list for search engines
 ```
 
 It's hosted for free on GitHub Pages, which republishes the site automatically whenever `main` changes.
