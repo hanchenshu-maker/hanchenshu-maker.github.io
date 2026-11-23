@@ -8,16 +8,16 @@ I'm an undergraduate at UCLA studying Economics and Mathematics of Computation, 
 
 ## What's on the site
 
-- **The route so far** — a timeline from Singapore to Los Angeles
-- **Work** — roles at UCLA Library and the Land Transport Authority, and earlier experience
+- **Current & Recent Work** — a quick snapshot of what I'm doing now
+- **Experience** — roles at UCLA and the Land Transport Authority, and earlier experience
 - **Research** — *Space, Time, and Spatial Injustice* and *Driving in the Dark*
 - **Campus** — leadership and activities at UCLA
-- **About** and **Contact**
+- **Education**, **Other Things** and **Contact**
 - **Résumé** — a printable, single-page view of the same content
 
 ## How it's built
 
-The site is deliberately simple: one hand-written HTML file with inline CSS and no frameworks, build step or tracking scripts. It loads fast, works without JavaScript-heavy tooling, and is easy to keep up to date.
+The design is minimal: a single narrow column on white, Inter throughout, dashed timelines for each section, and a photo slot (add `photo.jpg` to the repo root to replace the initials). The site is deliberately simple: one hand-written HTML file with inline CSS and no frameworks, build step or tracking scripts. It loads fast, works without JavaScript-heavy tooling, and is easy to keep up to date.
 
 ```
 index.html    the whole site (main page + résumé view)
@@ -40,7 +40,7 @@ python3 -m http.server 8000
 
 ## Updating
 
-Edit `index.html` and commit to `main`; the live site refreshes within a minute or two. Each role or project is a single `<li class="stop">` block, so adding a new entry means copying an existing block and changing the text.
+Edit `index.html` and commit to `main`; the live site refreshes within a minute or two. Each role or project is a single `<li>` block inside an `<ol class="tl">` timeline, so adding a new entry means copying an existing block and changing the text.
 
 ## Contact
 
