@@ -8,11 +8,11 @@
 <meta property="og:title" content="Hanchen Shu">
 <meta property="og:description" content="Economics and mathematics of computation at UCLA. Transport policy, analytics and spatial modeling.">
 <meta property="og:type" content="profile">
-<meta name="theme-color" content="#0A7A4A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='0' y='13' width='32' height='6' fill='%230A7A4A'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23fff' stroke='%230A7A4A' stroke-width='5'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231c1917'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='14' fill='%23fff'%3EHS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=Barlow+Semi+Condensed:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <script>document.documentElement.className += " js";</script>
 <script type="application/ld+json">
 {
@@ -27,229 +27,151 @@
 }
 </script>
 <style>
-/* Layout idea: one left-aligned column; careers drawn as transit lines with roles as stations.
-   Green line = work, blue line = campus. Signage sans for names and labels, a bookish serif for reading. */
+/* Minimal single column: white page, stone greys, one blue accent.
+   Inter for everything, a plain serif for the "Current & Recent Work" heading. */
 :root {
-  --paper: #F5F8F6;
-  --surface: #FFFFFF;
-  --ink: #16231E;
-  --muted: #56665F;
-  --rule: #D3DCD7;
-  --work: #0A7A4A;
-  --campus: #1F5FAE;
-  --font-sign: "Barlow Semi Condensed", "Barlow", "Arial Narrow", Arial, sans-serif;
-  --font-label: "Barlow", "Helvetica Neue", Arial, sans-serif;
-  --font-read: "Source Serif 4", "Iowan Old Style", Georgia, serif;
-  --step--1: 0.875rem;
-  --step-0: 1.0625rem;
-  --step-1: 1.3125rem;
-  --step-2: 1.625rem;
-  --step-3: 2.0625rem;
-  --step-5: clamp(2.75rem, 1.6rem + 5.2vw, 4.75rem);
-  --gutter: clamp(1.125rem, 4vw, 3rem);
-  --measure: 40rem;
-  color-scheme: light;
+  --ink: #1c1917;        /* stone-900 */
+  --body: #44403c;       /* stone-700 */
+  --muted: #78716c;      /* stone-500 */
+  --rule: #e7e5e4;       /* stone-200 */
+  --dash: #d6d3d1;       /* stone-300 */
+  --accent: #2563eb;     /* blue-600 */
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --col: 34rem;
+  --nav-h: 4rem;
+  --foot-h: 2.5rem;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0E1513;
-    --surface: #151E1B;
-    --ink: #E7EEEA;
-    --muted: #9FB1A9;
-    --rule: #3A4A44;
-    --work: #46C08A;
-    --campus: #86B4F2;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #0E1513;
-  --surface: #151E1B;
-  --ink: #E7EEEA;
-  --muted: #9FB1A9;
-  --rule: #3A4A44;
-  --work: #46C08A;
-  --campus: #86B4F2;
-  color-scheme: dark;
-}
-
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 1rem); }
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-read);
-  font-size: var(--step-0);
-  line-height: 1.62;
+  margin: 0; background: #fff; color: var(--body);
+  font-family: var(--sans); font-size: 0.875rem; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: var(--foot-h);
 }
-h1, h2, h3 { font-family: var(--font-sign); line-height: 1.12; margin: 0; text-wrap: balance; }
-p, ul, ol, dl, figure { margin: 0; }
-a { color: inherit; text-decoration-color: var(--work); text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
-a:hover { color: var(--work); }
-:focus-visible { outline: 3px solid var(--campus); outline-offset: 3px; border-radius: 2px; }
-.skip {
-  position: absolute; left: var(--gutter); top: -4rem;
-  background: var(--ink); color: var(--paper); padding: 0.5rem 0.875rem;
-  font-family: var(--font-label); font-weight: 600; border-radius: 4px; z-index: 10;
-}
+h1, h2, h3, p, ul, ol, dl, figure { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: #fff; padding: 0.5rem 0.875rem; border-radius: 4px; z-index: 20; text-decoration: none; }
 .skip:focus { top: 0.75rem; }
-.wrap { max-width: 68rem; margin-inline: auto; padding-inline: var(--gutter); }
+.col { max-width: var(--col); margin-inline: auto; padding-inline: 1.25rem; }
 
-/* Top bar */
-.top { border-bottom: 1px solid var(--rule); }
-.top .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.375rem 1.5rem; padding-block: 0.875rem; }
-.home-link { font-family: var(--font-sign); font-weight: 700; font-size: var(--step-1); text-decoration: none; }
-.top nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.125rem 1.25rem; }
-.top nav a { font-family: var(--font-label); font-weight: 500; font-size: 1rem; text-decoration: none; display: inline-block; padding-block: 0.375rem; }
-.top nav a:hover, .top nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--work); text-decoration-thickness: 3px; text-underline-offset: 0.4em; color: inherit; }
+/* Nav */
+.top { position: sticky; top: 0; z-index: 10; height: var(--nav-h); background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.top ul { list-style: none; padding: 0 1rem; margin: 0; height: 100%; display: flex; align-items: center; justify-content: center; gap: 0.25rem 2.25rem; overflow-x: auto; scrollbar-width: none; }
+.top ul::-webkit-scrollbar { display: none; }
+.top a { color: var(--muted); text-decoration: none; font-size: 0.8125rem; white-space: nowrap; transition: color .15s; }
+.top a:hover, .top a[aria-current="page"] { color: var(--ink); }
+.top a[aria-current="page"] { font-weight: 500; }
 
 /* Views */
 .js .view:not(.is-active) { display: none; }
 
-/* Intro */
-.intro { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.25rem); display: grid; gap: 1.5rem; }
-.intro h1 { font-size: var(--step-5); font-weight: 700; letter-spacing: -0.012em; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1.25rem; }
-.intro h1 [lang] { font-family: "Songti SC", "Noto Serif SC", "PingFang SC", "Microsoft YaHei", serif; font-weight: 400; font-size: 0.42em; color: var(--muted); letter-spacing: 0.08em; }
-.descriptor { font-family: var(--font-label); font-weight: 600; font-size: var(--step-1); line-height: 1.3; }
-.lede { font-size: var(--step-1); line-height: 1.5; max-width: 40rem; }
-.actions { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.btn {
-  display: inline-block; font-family: var(--font-label); font-weight: 600; font-size: 1rem; line-height: 1.2;
-  padding: 0.75rem 1.125rem; border-radius: 999px; text-decoration: none;
-  border: 2px solid var(--ink); color: var(--ink); background: transparent; cursor: pointer;
-}
-.btn:hover { background: var(--ink); color: var(--paper); }
-.btn--solid { background: var(--work); border-color: var(--work); color: var(--paper); }
-.btn--solid:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+/* Hero */
+.hero { display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: start; padding-block: 4.5rem 3rem; }
+.avatar-wrap { display: grid; justify-items: center; gap: 0.875rem; padding-left: 1rem; }
+.avatar { position: relative; width: 7rem; height: 7rem; border-radius: 50%; border: 1px solid var(--ink); overflow: hidden; background: #f5f5f4; display: grid; place-items: center; }
+.avatar span { font-family: var(--serif); font-weight: 700; font-size: 2rem; color: var(--ink); letter-spacing: -0.02em; }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.icons { display: flex; gap: 1rem; }
+.icons a { color: var(--body); display: inline-flex; }
+.icons a:hover { color: var(--ink); }
+.icons svg { width: 1.0625rem; height: 1.0625rem; }
+.hero h1 { font-size: 1.5rem; font-weight: 600; line-height: 1.33; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 0.5rem; margin-top: 0.25rem; }
+.hero h1 [lang] { font-weight: 400; font-size: 0.75em; color: var(--muted); letter-spacing: 0.04em; margin-left: 0.25rem; }
+.flags { font-size: 0.8125rem; letter-spacing: 0.25em; margin-bottom: 1.125rem; }
+.hero p.lede { font-size: 0.875rem; line-height: 1.7; }
 
-/* Route strip: the path so far, as one line */
-.route { padding-block: 0 clamp(2.5rem, 6vw, 4rem); }
-.route h2 { font-family: var(--font-label); font-weight: 600; font-size: var(--step--1); color: var(--muted); margin-bottom: 1rem; }
-.route ol { list-style: none; padding: 0; position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
-.route ol::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 6px; border-radius: 3px;
-  background: var(--work); transform-origin: left center; animation: draw-x 0.9s ease-out both;
-}
-.route li { position: relative; padding-top: 2rem; font-family: var(--font-label); line-height: 1.3; }
-.route li::before {
-  content: ""; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%;
-  background: var(--paper); border: 5px solid var(--work);
-}
-.route li.is-campus::before { border-color: var(--campus); }
-.route .yr { display: block; font-size: var(--step--1); color: var(--muted); font-variant-numeric: tabular-nums; }
-.route .st { display: block; font-weight: 600; font-size: 1rem; }
-.route .ro { display: block; font-size: var(--step--1); color: var(--muted); }
-@keyframes draw-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes draw-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+/* Current & recent */
+.serif-h { font-family: var(--serif); font-size: 1.125rem; font-weight: 700; letter-spacing: -0.025em; color: var(--ink); padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.25rem; }
+.dots { list-style: none; padding: 0; display: grid; gap: 0.625rem; }
+.dots li { position: relative; padding-left: 1.125rem; }
+.dots li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.dots strong { font-weight: 600; color: var(--ink); }
+.dots a { font-weight: 600; color: var(--ink); text-underline-offset: 0.15em; }
+.dots .sub { display: block; }
+.ext::after { content: "↗"; font-weight: 400; color: var(--muted); margin-left: 0.2em; font-size: 0.85em; }
 
-/* Sections */
-.band { border-top: 1px solid var(--rule); padding-block: clamp(2.5rem, 6vw, 4.5rem); }
-.band > .wrap { display: grid; gap: 1.75rem; }
-.band h2 { font-size: var(--step-3); font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
-.band h2::before { content: ""; width: 2.25rem; height: 6px; border-radius: 3px; background: var(--line, var(--ink)); flex: none; }
-.band .sub { color: var(--muted); max-width: var(--measure); margin-top: 0.5rem; }
-.is-work { --line: var(--work); }
-.is-campus { --line: var(--campus); }
-@media (min-width: 60rem) {
-  .band > .wrap { grid-template-columns: 15rem minmax(0, 1fr); gap: 2.5rem; align-items: start; }
-  .band > .wrap > :first-child { position: sticky; top: 1.5rem; }
-  .inset { padding-left: 2.75rem; }
-}
+/* Sections with timelines */
+.sec { padding-top: 3.25rem; }
+.cap-h { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); padding-bottom: 0.625rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.5rem; }
+.sec .intro { color: var(--muted); margin: -0.75rem 0 1.5rem; }
+.tl { list-style: none; padding: 0; display: grid; gap: 1.75rem; }
+.tl > li { position: relative; padding-left: 2rem; }
+.tl > li::before { content: ""; position: absolute; left: 0; top: 0.5rem; bottom: -1.75rem; border-left: 1px dashed var(--dash); }
+.tl > li:last-child::before { bottom: 0; }
+.tl > li::after { content: ""; position: absolute; left: -4px; top: 0.4rem; width: 9px; height: 9px; border-radius: 50%; background: #fff; border: 1.5px solid var(--muted); }
+.tl h3 { font-size: 0.875rem; font-weight: 500; color: var(--ink); line-height: 1.5; }
+.tl .org { font-style: italic; color: var(--body); font-size: 0.8125rem; }
+.tl .when { color: var(--muted); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.tl ul { list-style: none; padding: 0; margin-top: 0.5rem; display: grid; gap: 0.25rem; font-size: 0.8125rem; color: var(--body); }
+.tl ul + ul { margin-top: 0.875rem; }
+.tl p.text { font-size: 0.8125rem; margin-top: 0.5rem; }
 
-/* A line with stops */
-.line { list-style: none; padding: 0; position: relative; display: grid; gap: 2.25rem; }
-.line::before { content: ""; position: absolute; left: 7px; top: 0.5rem; bottom: 0.5rem; width: 6px; border-radius: 3px; background: var(--line); }
-.stop { position: relative; padding-left: 2.75rem; display: grid; gap: 0.375rem; max-width: 46rem; }
-.stop::before {
-  content: ""; position: absolute; left: 0; top: 0.2rem; width: 20px; height: 20px; border-radius: 50%;
-  background: var(--paper); border: 5px solid var(--line);
-}
-.when { font-family: var(--font-label); font-weight: 500; font-size: var(--step--1); color: var(--muted); font-variant-numeric: tabular-nums; }
-.stop h3 { font-size: var(--step-2); font-weight: 600; }
-.org { font-family: var(--font-label); font-weight: 600; font-size: 1rem; }
-.stop ul { list-style: disc; padding-left: 1.125rem; display: grid; gap: 0.375rem; margin-top: 0.375rem; }
-.stop li::marker { color: var(--line); }
-
-/* Research */
-.studies { display: grid; gap: 3rem; }
-.study { display: grid; gap: 1rem; max-width: 46rem; }
-.study h3 { font-size: var(--step-2); font-weight: 600; }
-.study .kind { font-family: var(--font-label); font-size: var(--step--1); color: var(--muted); font-weight: 500; }
-.study p { max-width: var(--measure); }
-.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 1.125rem 1.25rem 1rem; display: grid; gap: 0.875rem; font-family: var(--font-label); }
-.chart figcaption { font-weight: 600; font-size: 1rem; }
-.bars { display: grid; gap: 0.75rem; }
+/* Research chart, kept small and quiet */
+.chart { margin-top: 0.875rem; border: 1px solid var(--rule); border-radius: 6px; padding: 0.875rem 1rem; display: grid; gap: 0.625rem; font-size: 0.75rem; }
+.chart figcaption { font-weight: 500; color: var(--ink); font-size: 0.8125rem; }
 .bar { display: grid; gap: 0.25rem; }
-.bar .lab { font-size: var(--step--1); color: var(--muted); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.bar .track { position: relative; height: 1.25rem;
-  background: linear-gradient(to right, var(--rule) 1px, transparent 1px) 0 0 / 50% 100% repeat-x; border-right: 1px solid var(--rule); }
-.bar .fill { display: block; height: 100%; min-width: 3px; background: var(--campus); border-radius: 0 3px 3px 0; }
-.bar .val { font-weight: 600; font-size: 1rem; color: var(--ink); font-variant-numeric: tabular-nums; flex: none; }
-.axis { display: grid; grid-template-columns: 1fr auto 1fr; font-size: 0.875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.axis span:last-child { text-align: right; }
-.chart .note { font-size: var(--step--1); color: var(--muted); font-family: var(--font-read); line-height: 1.5; }
-.tools { font-family: var(--font-label); font-size: var(--step--1); color: var(--muted); }
+.bar .lab { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); }
+.bar .val { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.bar .track { height: 0.5rem; background: #f5f5f4; border-radius: 999px; overflow: hidden; }
+.bar .fill { display: block; height: 100%; min-width: 3px; background: var(--accent); border-radius: 999px; }
+.chart .note { color: var(--muted); line-height: 1.55; }
 
-/* About */
-.prose { display: grid; gap: 1rem; max-width: var(--measure); }
-.facts { display: grid; gap: 1.5rem; margin-top: 1.5rem; max-width: 46rem; }
-.facts div { display: grid; gap: 0.25rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
-.facts dt { font-family: var(--font-sign); font-weight: 600; font-size: var(--step-1); }
+/* Facts */
+.facts { display: grid; gap: 0.875rem; font-size: 0.8125rem; }
+.facts div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; }
+.facts dt { font-weight: 500; color: var(--ink); }
 .facts dd { margin: 0; }
-.facts dd + dd { color: var(--muted); }
-@media (min-width: 44rem) {
-  .facts div { grid-template-columns: 11rem minmax(0, 1fr); column-gap: 1.5rem; }
-  .facts dt { grid-row: 1 / span 4; }
-  .facts dd { grid-column: 2; }
-}
 
 /* Contact */
-.contact-line { font-family: var(--font-sign); font-weight: 600; font-size: clamp(1.5rem, 1rem + 2.4vw, 2.25rem); overflow-wrap: anywhere; line-height: 1.2; }
-.contact-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1rem; }
-.status { font-family: var(--font-label); font-size: var(--step--1); color: var(--muted); min-height: 1.3em; margin-top: 0.5rem; }
+.contact p { margin-bottom: 0.875rem; }
+.links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.btn { display: inline-block; font: inherit; font-size: 0.8125rem; font-weight: 500; padding: 0.4rem 0.875rem; border-radius: 999px; border: 1px solid var(--dash); background: #fff; color: var(--ink); text-decoration: none; cursor: pointer; transition: border-color .15s, background .15s; }
+.btn:hover { border-color: var(--ink); }
+.btn--dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn--dark:hover { background: #44403c; }
+.status { font-size: 0.75rem; color: var(--muted); min-height: 1.2em; margin-top: 0.5rem; }
 
-/* Resume view */
-.sheet { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: clamp(1.25rem, 4vw, 3rem); margin-block: clamp(1.5rem, 4vw, 3rem); display: grid; gap: 1.75rem; max-width: 54rem; }
-.sheet h1 { font-size: var(--step-3); font-weight: 700; }
-.sheet .reach { font-family: var(--font-label); color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 0.375rem; }
-.sheet h2 { font-size: var(--step-1); font-weight: 700; border-bottom: 2px solid var(--ink); padding-bottom: 0.25rem; margin-bottom: 0.875rem; }
-.sheet section { display: grid; }
-.entry { display: grid; gap: 0.125rem; margin-bottom: 1rem; }
+.end { height: 4rem; }
+
+/* Résumé view */
+.sheet { padding-block: 3.5rem 1.5rem; display: grid; gap: 2rem; }
+.sheet header h1 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; }
+.sheet .reach { display: flex; flex-wrap: wrap; gap: 0.125rem 1rem; color: var(--muted); font-size: 0.8125rem; margin-top: 0.25rem; }
+.sheet h2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
+.entry { margin-bottom: 1rem; font-size: 0.8125rem; }
 .entry:last-child { margin-bottom: 0; }
-.entry-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; font-family: var(--font-label); }
-.entry-head strong { font-weight: 600; }
+.entry-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; }
+.entry-head strong { font-weight: 500; color: var(--ink); font-size: 0.875rem; }
 .entry-head span { color: var(--muted); font-variant-numeric: tabular-nums; }
-.entry em { font-style: italic; }
-.entry ul { list-style: disc; padding-left: 1.125rem; margin-top: 0.25rem; display: grid; gap: 0.125rem; font-size: 1rem; line-height: 1.5; }
-.sheet-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: clamp(1.5rem, 4vw, 3rem); margin-bottom: 3rem; }
+.entry em { color: var(--body); }
+.entry ul { padding-left: 1rem; margin-top: 0.25rem; display: grid; gap: 0.125rem; }
+.entry li::marker { color: var(--accent); }
+.entry strong { color: var(--ink); font-weight: 500; }
+.sheet-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-bottom: 4rem; }
 
-footer { border-top: 1px solid var(--rule); padding-block: 1.5rem 2.5rem; font-family: var(--font-label); font-size: var(--step--1); color: var(--muted); }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; }
+/* Footer, pinned like the reference */
+.narrow { display: none; }
+footer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--foot-h); background: rgba(255,255,255,0.95); border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; gap: 1rem; font-size: 0.75rem; color: var(--muted); z-index: 10; }
 
-/* Phone: the route turns vertical */
-@media (max-width: 30rem) {
-  .top nav ul { gap: 0.125rem 0.75rem; }
-  .top nav a { font-size: 0.9375rem; padding-block: 0.625rem; }
+@media (max-width: 36rem) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 3rem 2.5rem; text-align: left; }
+  .avatar-wrap { justify-items: start; padding-left: 0; }
+  .top ul { justify-content: flex-start; gap: 1.5rem; }
+  .facts div { grid-template-columns: 1fr; gap: 0.125rem; }
+  .avatar { width: 5.5rem; height: 5.5rem; }
+  .avatar span { font-size: 1.5rem; }
+  .wide { display: none; }
+  .narrow { display: inline; }
 }
-@media (max-width: 59.99rem) {
-  .route ol { grid-template-columns: 1fr; gap: 1.125rem; }
-  .route ol::before { left: 7px; right: auto; top: 0.25rem; bottom: 0.25rem; width: 6px; height: auto; transform-origin: center top; animation-name: draw-y; }
-  .route li { padding-top: 0; padding-left: 2.5rem; }
-  .route li::before { top: 0.125rem; }
-  .stop { padding-left: 2.5rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .route ol::before { animation: none; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
-  .top, .skip, footer, .sheet-actions, .actions, .contact-list button { display: none; }
-  body { background: #fff; color: #000; }
-  .sheet { border: 0; padding: 0; margin: 0; }
-  html { font-size: 9.5pt; }
-  body { line-height: 1.35; }
+  .top, .skip, footer, .sheet-actions { display: none !important; }
+  body { padding: 0; font-size: 9.5pt; }
+  .sheet { padding: 0; gap: 1rem; }
   .entry { break-inside: avoid; }
 }
 </style>
@@ -257,248 +179,226 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="top">
-  <div class="wrap">
-    <a class="home-link" href="#top">Hanchen Shu</a>
-    <nav aria-label="Site">
-      <ul>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#campus">Campus</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume" data-nav="resume">Résumé</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<nav class="top" aria-label="Site">
+  <ul>
+    <li><a href="#top" data-nav="home" aria-current="page">Home</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#campus">Campus</a></li>
+    <li><a href="#other">Other Things</a></li>
+    <li><a href="#resume" data-nav="resume">Résumé</a></li>
+  </ul>
+</nav>
 
 <main id="main">
 
 <!-- ===================== HOME VIEW ===================== -->
 <div class="view is-active" id="view-home">
+<div class="col" id="top">
 
-  <div class="wrap" id="top">
-    <section class="intro" aria-labelledby="name">
-      <h1 id="name">Hanchen Shu <span lang="zh-Hans">舒瀚宸</span></h1>
-      <p class="descriptor">Economics and mathematics of computation at UCLA, class of 2029. GPA 4.00.</p>
-      <p class="lede">I like problems where data has to answer to real people: how seniors get around Singapore, how pedestrians move through New York, and which posts drive reach for a transport agency.</p>
-      <ul class="actions">
-        <li><a class="btn btn--solid" href="#resume">Read my résumé</a></li>
-        <li><a class="btn" href="#contact">Get in touch</a></li>
-        <li><a class="btn" href="https://www.linkedin.com/in/hanchenshu/" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </section>
-
-    <section class="route" aria-labelledby="route-title">
-      <h2 id="route-title">The route so far, Singapore to Los Angeles</h2>
-      <ol>
-        <li><span class="yr">2023 to 2024</span><span class="st">Singapore Armed Forces</span><span class="ro">Armour gunnery sergeant</span></li>
-        <li><span class="yr">2025</span><span class="st">Zi Hua Publishing</span><span class="ro">Marketing and operations</span></li>
-        <li><span class="yr">2025</span><span class="st">Land Transport Authority</span><span class="ro">Digital media analytics intern</span></li>
-        <li class="is-campus"><span class="yr">2025 to 2029</span><span class="st">UCLA</span><span class="ro">Economics and mathematics of computation</span></li>
-        <li><span class="yr">2026</span><span class="st">Land Transport Authority</span><span class="ro">Policy and planning intern</span></li>
-        <li><span class="yr">2026 to now</span><span class="st">UCLA Cluster 55</span><span class="ro">Research and writing specialist</span></li>
-      </ol>
-    </section>
-  </div>
-
-  <section class="band is-work" id="work" aria-labelledby="work-title">
-    <div class="wrap">
-      <div>
-        <h2 id="work-title">Work</h2>
-        <p class="sub">Five roles across transport policy, analytics, publishing, teaching and the army. Most recent first.</p>
+  <section class="hero" aria-labelledby="name">
+    <div class="avatar-wrap">
+      <!-- To use a photo, add photo.jpg to the repo root. Until then the initials show. -->
+      <div class="avatar"><span aria-hidden="true">HS</span><img src="photo.jpg" alt="Hanchen Shu" onerror="this.remove()"></div>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/hanchenshu/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="mailto:hanchenshu@ucla.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
       </div>
-      <ol class="line">
-        <li class="stop">
-          <p class="when">June 2026 to present</p>
-          <h3>Peer Research and Writing Specialist</h3>
-          <p class="org">UCLA Cluster Program, Cluster 55: Innovation and Entrepreneurship</p>
-          <ul>
-            <li>Run one-on-one consultations and office hours for 150+ first-year students, from first idea to final pitch.</li>
-            <li>Run workshops on research, citation and writing, and advise on responsible use of generative AI within course policy.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <p class="when">July to September 2026</p>
-          <h3>Policy and Planning Intern</h3>
-          <p class="org">Land Transport Authority, Singapore. Transport Planning and Strategy</p>
-          <ul>
-            <li>Ran user research with 200+ seniors at Active Ageing Centres and mapped their commutes. The 20+ issues that surfaced informed 5+ accessibility policy recommendations.</li>
-            <li>Co-organized Singapore's first Youth Transport Council with the National Youth Council, guiding 50+ young people to 7 policy proposals.</li>
-            <li>Co-wrote a skip-stop express study for the East-West Line that projected a 55% cut in travel time. Pitched it to the COO and 10+ senior leaders, and it led to 2 new project group studies.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <p class="when">June to September 2025</p>
-          <h3>Digital Media Intern, Analytics</h3>
-          <p class="org">Land Transport Authority, Singapore. Digital and Social Media Team</p>
-          <ul>
-            <li>Analyzed 200K+ monthly impressions across LTA's 7 social media accounts and benchmarked 20+ competitor accounts to model which formats and posting times drove reach.</li>
-            <li>Recommended new posting schedules and hook-first short videos, contributing to 20%+ higher engagement and 600K+ new impressions.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <p class="when">January to September 2025</p>
-          <h3>Head of Marketing and Operations</h3>
-          <p class="org">Zi Hua Publishing, Singapore</p>
-          <ul>
-            <li>Analyzed 3,500+ sales data points to refocus inventory on 8 products, growing revenue 50% year over year.</li>
-            <li>Expanded distribution to 30+ stores of Popular, Singapore's largest bookstore chain, through S$10K+ deals.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <p class="when">January 2023 to November 2024</p>
-          <h3>Armour Gunnery Sergeant</h3>
-          <p class="org">Singapore Armed Forces, Armour Training Institute. National Service</p>
-          <ul>
-            <li>Trained 200+ cadets a month in tank gunnery with a 100% course pass rate, and oversaw S$10M+ in equipment for international exercises.</li>
-          </ul>
-        </li>
-      </ol>
+    </div>
+    <div>
+      <h1 id="name">Hi, I'm Hanchen! <span lang="zh-Hans">舒瀚宸</span></h1>
+      <p class="flags" aria-label="Singapore and the United States">🇸🇬 🇺🇸</p>
+      <p class="lede">I study economics and mathematics of computation at UCLA, on a Land Transport Authority scholarship from Singapore. I like problems where data has to answer to real people: how seniors get around Singapore, how pedestrians move through New York, and which posts drive reach for a transport agency. Reach out if something resonates!</p>
     </div>
   </section>
 
-  <section class="band is-campus" id="research" aria-labelledby="research-title">
-    <div class="wrap">
-      <div>
-        <h2 id="research-title">Research</h2>
-        <p class="sub">Two projects from UCLA's year-long Data, Justice, and Society cluster, September 2025 to June 2026. Both ask who a model leaves out.</p>
-      </div>
-      <div class="studies inset">
-        <article class="study" aria-labelledby="study-1">
-          <div>
-            <h3 id="study-1">Space, Time, and Spatial Injustice</h3>
-            <p class="kind">A spatial regression of pedestrian footfall in New York City</p>
-          </div>
-          <p>Planners often model foot traffic with ordinary least squares, which treats every street as if its neighbors did not exist. I tested that assumption on the New York City Department of Transportation's Bi-Annual Pedestrian Counts, using three synthesized stand-in predictors for distance to transit, retail density and civic space.</p>
-          <figure class="chart">
-            <figcaption>Share of the variation in footfall each model explains</figcaption>
-            <div class="bars">
-              <div class="bar">
-                <div class="lab"><span>Ordinary least squares: each street on its own</span><span class="val">0.6%</span></div>
-                <div class="track"><span class="fill" style="width:0.58%"></span></div>
-              </div>
-              <div class="bar">
-                <div class="lab"><span>Spatial autoregressive model: each street with its 4 nearest neighbors</span><span class="val">41.5%</span></div>
-                <div class="track"><span class="fill" style="width:41.48%"></span></div>
-              </div>
-            </div>
-            <div class="axis" aria-hidden="true"><span>0</span><span>50%</span><span>100%</span></div>
-            <p class="note">R² of 0.0058 for OLS against a pseudo-R² of 0.4148 for the spatial model. The spillover coefficient was ρ = 0.62: when neighboring streets are busy, a street is busier too. The predictors were synthesized placeholders, so the comparison is best read as a test of the spatial term.</p>
-          </figure>
-          <p>The practical point is that a model which ignores geography reads a quiet street as a street nobody wants, and steers investment toward hubs that are already busy. I also wrote up the limits: the spatial term can overfit to local noise, and straight-line distance ignores barriers such as freeways.</p>
-          <p class="tools">Built in Python with pandas, GeoPandas, libpysal and spreg, in a Google Colab notebook.</p>
-        </article>
-
-        <article class="study" aria-labelledby="study-2">
-          <div>
-            <h3 id="study-2">Driving in the Dark</h3>
-            <p class="kind">An essay on where autonomous vehicles get tested, and where they don't. March 2026</p>
-          </div>
-          <p>Autonomous vehicle makers test where mapping is easy and customers are dense, such as the wide grids of Phoenix and the corridors of San Francisco. I call the places left out data deserts: regions where a lack of high-definition sensor data and local testing makes the systems unreliable.</p>
-          <p>I read California DMV disengagement reports from 2020 to 2025 and found root causes logged in wording too vague to audit. The essay proposes a public-interest data repository, overseen by an equity board housed within a federal body like the National Highway Traffic Safety Administration, so regulators can see where these systems fail.</p>
-          <p>I presented the findings to the Active Mobility department at Singapore's Land Transport Authority.</p>
-        </article>
-      </div>
-    </div>
+  <section aria-labelledby="now-title">
+    <h2 class="serif-h" id="now-title">Current &amp; Recent Work</h2>
+    <ul class="dots">
+      <li><strong>UCLA Cluster 55</strong>: Peer Research and Writing Specialist, running consultations and workshops for 150+ first-year students</li>
+      <li><strong>Land Transport Authority</strong>: Policy and planning intern, summer 2026. Senior mobility research, Singapore's first Youth Transport Council, an East-West Line express study</li>
+      <li><strong>Research</strong>: <a href="#research">Spatial modeling of pedestrian footfall</a> and <a href="#research">where autonomous vehicles get tested</a></li>
+      <li><strong>UCLA Chinese Music Ensemble</strong>: President and concertmaster, leading 70+ musicians</li>
+      <li>UCLA: Math 115AH, CS 32, Math 33B, Econ 102</li>
+      <li>Some skillsets: data analytics, spatial regression, user research, transport policy, Python, R, C++</li>
+    </ul>
   </section>
 
-  <section class="band is-campus" id="campus" aria-labelledby="campus-title">
-    <div class="wrap">
-      <div>
-        <h2 id="campus-title">Campus</h2>
-        <p class="sub">What I run and compete in at UCLA. All four began in September 2025 and are ongoing.</p>
-      </div>
-      <ol class="line">
-        <li class="stop">
-          <h3>President and Concertmaster</h3>
-          <p class="org">UCLA Chinese Music Ensemble</p>
-          <ul>
-            <li>Lead 70+ musicians and a board of 20+, co-producing quarterly concerts with the UCLA Herb Alpert School of Music.</li>
-            <li>Grew concert attendance 67%, kept 80%+ of new members, and performed as concertmaster for audiences of 500+ at CalArts and UCLA's Royce Hall.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <h3>Vice President, Outreach and Corporate Communications</h3>
-          <p class="org">UCLA Singapore Students' Association</p>
-          <ul>
-            <li>Organized 4 industry mixers connecting 65+ students with 50+ professionals from Google, Meta and Tesla, and secured US$2K+ in sponsorships from 10+ partners including DHL, Singapore Airlines and Yeo's.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <h3>Project Lead</h3>
-          <p class="org">UCLA Institute of Transportation Engineers</p>
-          <ul>
-            <li>Presented research on past transportation projects to 10+ board members and coordinated talks at UCLA with 3 transportation industry experts.</li>
-          </ul>
-        </li>
-        <li class="stop">
-          <h3>Student Athlete</h3>
-          <p class="org">UCLA Dragon Boat</p>
-          <ul>
-            <li>6 podiums across 4 regattas: San Francisco College Cup, Tempe, Long Beach and San Diego's Mission Bay.</li>
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="band" id="about" aria-labelledby="about-title">
-    <div class="wrap">
-      <h2 id="about-title">About</h2>
-      <div class="inset">
-        <div class="prose">
-          <p>I'm from Singapore and came to UCLA in 2025 on a Land Transport Authority scholarship.</p>
-          <p>I have played the erhu, a two-stringed Chinese fiddle, for more than ten years. In 2024 I placed second in the erhu category at the Central Conservatory of Music's festival, and in February 2026 I performed as a soloist in a contemporary music recital at CalArts.</p>
-          <p>I once traveled to Shenzhen to visit BYD's headquarters and AION's manufacturing facility, a self-driven deep dive into the autonomous vehicle industry. Away from work I run marathons, play mahjong and build tank models.</p>
-        </div>
-        <dl class="facts">
-          <div>
-            <dt>Education</dt>
-            <dd>UCLA. B.S. Mathematics of Computation and B.A. Economics, expected June 2029</dd>
-            <dd>GPA 4.00 out of 4.00. Dean's Honors List every quarter</dd>
-            <dd>Coursework: honors linear algebra, multivariable calculus, data structures, microeconomics, macroeconomics</dd>
-            <dd>Raffles Institution, Singapore. GCE A-Levels, 2022</dd>
-          </div>
-          <div>
-            <dt>Tools</dt>
-            <dd>Python (pandas, GeoPandas, PySAL), R, C++, LaTeX, Excel, Tableau</dd>
-            <dd>Emplifi, Canva, Notion, web app prototyping on Vercel</dd>
-          </div>
-          <div>
-            <dt>Methods</dt>
-            <dd>User research, competitor analysis, marketing strategy, spatial regression</dd>
-          </div>
-          <div>
-            <dt>Languages</dt>
-            <dd>English and Mandarin, both native</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="contact" aria-labelledby="contact-title">
-    <div class="wrap">
-      <h2 id="contact-title">Contact</h2>
-      <div class="inset">
-        <p class="contact-line"><a href="mailto:hanchenshu@ucla.edu" id="email">hanchenshu@ucla.edu</a></p>
-        <ul class="contact-list">
-          <li><button class="btn" type="button" id="copy-email">Copy email</button></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/hanchenshu/" rel="noopener">LinkedIn</a></li>
-          <li><a class="btn" href="#resume">Read my résumé</a></li>
+  <section class="sec" id="experience" aria-labelledby="exp-title">
+    <h2 class="cap-h" id="exp-title">Experience</h2>
+    <ol class="tl">
+      <li>
+        <h3>Peer Research and Writing Specialist</h3>
+        <p class="org">UCLA Cluster Program, Cluster 55: Innovation and Entrepreneurship</p>
+        <p class="when">June 2026 – Present</p>
+        <ul>
+          <li>One-on-one consultations and office hours for 150+ first-year students, from first idea to final pitch</li>
+          <li>Workshops on research, citation and writing; advice on responsible use of generative AI within course policy</li>
         </ul>
-        <p class="status" id="copy-status" role="status" aria-live="polite"></p>
-      </div>
-    </div>
+      </li>
+      <li>
+        <h3>Policy and Planning Intern</h3>
+        <p class="org">Land Transport Authority, Singapore · Transport Planning and Strategy</p>
+        <p class="when">July – September 2026</p>
+        <ul>
+          <li>User research with 200+ seniors at Active Ageing Centres; 20+ commute issues informed 5+ accessibility policy recommendations</li>
+          <li>Co-organized Singapore's first Youth Transport Council with the National Youth Council, guiding 50+ young people to 7 policy proposals</li>
+          <li>Co-wrote an East-West Line skip-stop express study projecting a 55% cut in travel time; pitched to the COO and 10+ senior leaders, leading to 2 new project group studies</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Digital Media Intern, Analytics</h3>
+        <p class="org">Land Transport Authority, Singapore · Digital and Social Media Team</p>
+        <p class="when">June – September 2025</p>
+        <ul>
+          <li>Analyzed 200K+ monthly impressions across 7 accounts and benchmarked 20+ competitor accounts to model what drove reach</li>
+          <li>New posting schedules and hook-first short videos contributed to 20%+ higher engagement and 600K+ new impressions</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Head of Marketing and Operations</h3>
+        <p class="org">Zi Hua Publishing, Singapore</p>
+        <p class="when">January – September 2025</p>
+        <ul>
+          <li>Refocused inventory on 8 products using 3,500+ sales data points, growing revenue 50% year over year</li>
+          <li>Expanded distribution to 30+ stores of Popular, Singapore's largest bookstore chain, through S$10K+ deals</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Armour Gunnery Sergeant</h3>
+        <p class="org">Singapore Armed Forces, Armour Training Institute · National Service</p>
+        <p class="when">January 2023 – November 2024</p>
+        <ul>
+          <li>Trained 200+ cadets a month in tank gunnery with a 100% course pass rate; oversaw S$10M+ in equipment for international exercises</li>
+        </ul>
+      </li>
+    </ol>
   </section>
 
+  <section class="sec" id="research" aria-labelledby="res-title">
+    <h2 class="cap-h" id="res-title">Research</h2>
+    <p class="intro">From UCLA's year-long Data, Justice, and Society cluster, 2025 – 2026. Both projects ask who a model leaves out.</p>
+    <ol class="tl">
+      <li>
+        <h3>Space, Time, and Spatial Injustice</h3>
+        <p class="org">A spatial regression of pedestrian footfall in New York City</p>
+        <p class="when">2025 – 2026 · Python, GeoPandas, PySAL</p>
+        <p class="text">Planners often model foot traffic with ordinary least squares, which treats every street as if its neighbors did not exist. I tested that on NYC DOT's Bi-Annual Pedestrian Counts. A model that ignores geography reads a quiet street as one nobody wants, and steers investment toward hubs that are already busy.</p>
+        <figure class="chart">
+          <figcaption>Share of variation in footfall each model explains</figcaption>
+          <div class="bar">
+            <div class="lab"><span>Ordinary least squares</span><span class="val">0.6%</span></div>
+            <div class="track"><span class="fill" style="width:0.58%"></span></div>
+          </div>
+          <div class="bar">
+            <div class="lab"><span>Spatial autoregressive, 4 nearest neighbors</span><span class="val">41.5%</span></div>
+            <div class="track"><span class="fill" style="width:41.48%"></span></div>
+          </div>
+          <p class="note">R² 0.0058 vs. pseudo-R² 0.4148; spillover ρ = 0.62. Predictors were synthesized placeholders, so this is best read as a test of the spatial term.</p>
+        </figure>
+      </li>
+      <li>
+        <h3>Driving in the Dark</h3>
+        <p class="org">An essay on where autonomous vehicles get tested, and where they don't</p>
+        <p class="when">March 2026</p>
+        <p class="text">AV makers test where mapping is easy and customers are dense, leaving "data deserts" where the systems are unreliable. Reading California DMV disengagement reports from 2020 to 2025, I found root causes logged too vaguely to audit, and proposed a public-interest data repository overseen by an equity board within a federal body like NHTSA. Presented to the Active Mobility department at Singapore's LTA.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec" id="campus" aria-labelledby="campus-title">
+    <h2 class="cap-h" id="campus-title">Campus</h2>
+    <ol class="tl">
+      <li>
+        <h3>President and Concertmaster</h3>
+        <p class="org">UCLA Chinese Music Ensemble</p>
+        <p class="when">September 2025 – Present</p>
+        <ul>
+          <li>Lead 70+ musicians and a board of 20+, co-producing quarterly concerts with the Herb Alpert School of Music</li>
+          <li>Grew concert attendance 67% and kept 80%+ of new members; concertmaster for audiences of 500+ at CalArts and Royce Hall</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Vice President, Outreach and Corporate Communications</h3>
+        <p class="org">UCLA Singapore Students' Association</p>
+        <p class="when">September 2025 – Present</p>
+        <ul>
+          <li>4 industry mixers connecting 65+ students with 50+ professionals from Google, Meta and Tesla</li>
+          <li>US$2K+ in sponsorships from 10+ partners including DHL, Singapore Airlines and Yeo's</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Project Lead</h3>
+        <p class="org">UCLA Institute of Transportation Engineers</p>
+        <p class="when">September 2025 – Present</p>
+        <ul>
+          <li>Presented research on past transportation projects to 10+ board members; coordinated talks with 3 industry experts</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Student Athlete</h3>
+        <p class="org">UCLA Dragon Boat</p>
+        <p class="when">September 2025 – Present</p>
+        <ul>
+          <li>6 podiums across 4 regattas: San Francisco College Cup, Tempe, Long Beach and Mission Bay</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec" id="education" aria-labelledby="edu-title">
+    <h2 class="cap-h" id="edu-title">Education</h2>
+    <ol class="tl">
+      <li>
+        <h3>B.S. Mathematics of Computation, B.A. Economics</h3>
+        <p class="org">UCLA</p>
+        <p class="when">2025 – 2029</p>
+        <ul>
+          <li>GPA 4.00 · Dean's Honors List every quarter</li>
+          <li>Land Transport Authority Scholarship</li>
+          <li>Honors linear algebra, multivariable calculus, data structures, micro- and macroeconomics</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Singapore-Cambridge GCE A-Levels</h3>
+        <p class="org">Raffles Institution</p>
+        <p class="when">Graduated 2022</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec" id="other" aria-labelledby="other-title">
+    <h2 class="cap-h" id="other-title">Other Things</h2>
+    <ul class="dots">
+      <li><strong>Erhu</strong>: 10+ years on the two-stringed Chinese fiddle. Second place at the Central Conservatory of Music's festival (2024); soloist in a contemporary recital at CalArts (February 2026)</li>
+      <li><strong>Autonomous vehicles</strong>: a self-driven trip to Shenzhen to visit BYD's headquarters and AION's manufacturing facility</li>
+      <li>Marathons, mahjong and building tank models</li>
+    </ul>
+    <dl class="facts" style="margin-top:1.75rem">
+      <div><dt>Tools</dt><dd>Python (pandas, GeoPandas, PySAL), R, C++, LaTeX, Excel, Tableau, Emplifi, Canva, Notion, Vercel</dd></div>
+      <div><dt>Methods</dt><dd>User research, competitor analysis, marketing strategy, spatial regression</dd></div>
+      <div><dt>Languages</dt><dd>English and Mandarin, both native</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="contact-title">
+    <h2 class="cap-h" id="contact-title">Contact</h2>
+    <p><a href="mailto:hanchenshu@ucla.edu" id="email">hanchenshu@ucla.edu</a></p>
+    <ul class="links">
+      <li><button class="btn btn--dark" type="button" id="copy-email">Copy email</button></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/hanchenshu/" rel="noopener">LinkedIn</a></li>
+      <li><a class="btn" href="#resume">Read my résumé</a></li>
+    </ul>
+    <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <div class="end"></div>
+</div>
 </div>
 
 <!-- ===================== RESUME VIEW ===================== -->
 <div class="view" id="view-resume">
-  <div class="wrap" id="resume">
+  <div class="col" id="resume">
     <article class="sheet" aria-labelledby="resume-name">
       <header>
         <h1 id="resume-name" tabindex="-1">Hanchen Shu</h1>
@@ -605,6 +505,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </article>
     <p class="sheet-actions">
       <a class="btn" href="#top">Back to the site</a>
+      <button class="btn" type="button" onclick="window.print()">Print / save as PDF</button>
       <a class="btn" href="resume.pdf" id="pdf-link" hidden>Download PDF</a>
     </p>
   </div>
@@ -613,17 +514,16 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </main>
 
 <footer>
-  <div class="wrap">
-    <span>© 2026 Hanchen Shu</span>
-    <span>Updated November 2026</span>
-  </div>
+  <span>© 2026 Hanchen Shu<span class="wide">. All rights reserved.</span></span>
+  <span><span class="wide">Last updated: </span><span class="narrow">Updated </span>Nov 23, 2026</span>
 </footer>
 
 <script>
 (function () {
   var home = document.getElementById("view-home");
   var resume = document.getElementById("view-resume");
-  var resumeLinks = document.querySelectorAll('[data-nav="resume"]');
+  var homeLink = document.querySelector('[data-nav="home"]');
+  var resumeLink = document.querySelector('[data-nav="resume"]');
 
   function show(moveFocus) {
     var name = location.hash.replace("#", "");
@@ -631,16 +531,16 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     var onResume = name === "resume";
     home.classList.toggle("is-active", !onResume);
     resume.classList.toggle("is-active", onResume);
-    for (var i = 0; i < resumeLinks.length; i++) {
-      if (onResume) { resumeLinks[i].setAttribute("aria-current", "page"); }
-      else { resumeLinks[i].removeAttribute("aria-current"); }
-    }
+    if (onResume) { resumeLink.setAttribute("aria-current", "page"); homeLink.removeAttribute("aria-current"); }
+    else { homeLink.setAttribute("aria-current", "page"); resumeLink.removeAttribute("aria-current"); }
     if (onResume) {
       window.scrollTo(0, 0);
       if (moveFocus) { document.getElementById("resume-name").focus({ preventScroll: true }); }
-    } else if (name) {
+    } else if (name && name !== "top") {
       var target = document.getElementById(name);
       if (target) { target.scrollIntoView(); }
+    } else if (name === "top") {
+      window.scrollTo(0, 0);
     }
   }
   window.addEventListener("hashchange", function () { show(true); });
@@ -652,9 +552,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     var address = document.getElementById("email").textContent;
     function failed() { status.textContent = "Copying is blocked here. Select the address above to copy it."; }
     try {
-      navigator.clipboard.writeText(address).then(function () {
-        status.textContent = "Email copied.";
-      }, failed);
+      navigator.clipboard.writeText(address).then(function () { status.textContent = "Email copied."; }, failed);
     } catch (e) { failed(); }
   });
 })();
