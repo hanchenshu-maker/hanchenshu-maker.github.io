@@ -74,7 +74,7 @@ a { color: inherit; }
 .avatar-wrap { display: grid; justify-items: center; gap: 0.875rem; padding-left: 1rem; }
 .avatar { position: relative; width: 7rem; height: 7rem; border-radius: 50%; border: 1px solid var(--ink); overflow: hidden; background: #f5f5f4; display: grid; place-items: center; }
 .avatar span { font-family: var(--serif); font-weight: 700; font-size: 2rem; color: var(--ink); letter-spacing: -0.02em; }
-.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 47% 30%; transform: scale(1.75); transform-origin: 47% 36%; }
 .icons { display: flex; gap: 1rem; }
 .icons a { color: var(--body); display: inline-flex; }
 .icons a:hover { color: var(--ink); }
@@ -200,8 +200,8 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--foot-h); b
 
   <section class="hero" aria-labelledby="name">
     <div class="avatar-wrap">
-      <!-- To use a photo, add photo.jpg to the repo root. Until then the initials show. -->
-      <div class="avatar"><span aria-hidden="true">HS</span><img src="photo.jpg" alt="Hanchen Shu" onerror="this.remove()"></div>
+      <!-- Photo: Image.png in the repo root. Crop is set by object-position and scale on .avatar img. -->
+      <div class="avatar"><span aria-hidden="true">HS</span><img src="Image.png" alt="Hanchen Shu" onerror="this.remove()"></div>
       <div class="icons">
         <a href="https://www.linkedin.com/in/hanchenshu/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="mailto:hanchenshu@ucla.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
